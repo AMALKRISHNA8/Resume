@@ -32,12 +32,12 @@
 \usepackage{bookmark} % for bookmarks
 \usepackage{lastpage} % for getting the total number of pages
 \usepackage{changepage} % for one column entries (adjustwidth environment)
-\usepackage{paracol} % for two and three column entries
+\usepackage{paracol} % for one and two column entries
 \usepackage{ifthen} % for conditional statements
 \usepackage{needspace} % for avoiding page brake right after the section title
-\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+\usepackage{iftex} % check if engine is pdflatex or luatex
 
-% Ensure that generate pdf is machine readable/ATS parsable:
+% Ensure that generate pdf is machine readable (ATS parsable):
 \ifPDFTeX
     \input{glyphtounicode}
     \pdfgentounicode=1
@@ -50,7 +50,7 @@
 
 % Some settings:
 \raggedright
-\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before header and footer
 \pagestyle{empty} % no header or footer
 \setcounter{secnumdepth}{0} % no section numbering
 \setlength{\parindent}{0pt} % no indentation
@@ -134,7 +134,7 @@
     \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
 }{
     \par\kern\topsep
-} % new environment for the header
+} % new environment for header
 
 \newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
   \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
@@ -147,7 +147,8 @@
   }%
 }%
 
-% save the original href command in a new command:
+
+% save the original href command:
 \let\hrefWithoutArrow\href
 
 % new command for external links:
@@ -219,6 +220,27 @@
         \vspace{0.2 cm}
         
             \begin{twocolentry}{
+            August 2026
+        }
+            \textbf{Network Security Assessment \& Vulnerability Analysis Platform}\end{twocolentry}
+
+        \vspace{0.01 cm}
+        
+        \begin{onecolentry}
+            \textit{Full-Stack Cybersecurity Project | Python, Next.js, React, CVE}
+        \end{onecolentry}
+
+        \vspace{0.01 cm}
+        
+            \begin{highlights}
+                \item Developed a full-stack platform for TCP port scanning, service detection, security risk assessment, and vulnerability analysis.
+                \item Built a Python security engine with port scanning, service identification, evidence collection, version detection, and CVE-based vulnerability matching.
+                \item Developed a Next.js/React dashboard for scan configuration, findings, risk visualization, and automated security report generation.
+            \end{highlights}
+
+        \vspace{0.10 cm}
+
+            \begin{twocolentry}{
             April 2025
         }
             \textbf{ZeroAuth - Zero-Knowledge Proof Authentication for Private Credential Verification}\end{twocolentry}
@@ -232,11 +254,9 @@
         \vspace{0.01 cm}
         
             \begin{highlights}
-                \item Designed a privacy-preserving authentication platform enabling users to prove credentials (age, student status) without revealing underlying private data, using a three-component architecture: a mobile Wallet, a Relay server, and a Web SDK.
-                \item Implemented Groth16 zk-SNARK circuits in Circom and generated proofs client-side using snarkjs, with Poseidon hashing for cryptographic attribute commitments.
-                \item Built a React Native/Expo Wallet app with Ed25519-based decentralized identity (W3C did:key spec), PIN protection with timing-safe comparison, and offline action queuing with auto-sync.
-                \item Developed a Node.js/Express Relay server with a Supabase (PostgreSQL) backend, implementing session management, SHA-256 proof replay protection, rate limiting, and Row-Level Security policies.
-                \item Created a JavaScript SDK allowing any website to integrate passwordless, privacy-preserving verification via a QR code-based protocol with minimal code.
+                \item Developed a privacy-preserving credential verification platform using Groth16 zk-SNARKs, Circom, snarkjs, and Poseidon hashing.
+                \item Built a React Native/Expo Wallet with Ed25519 decentralized identity and a Node.js/Express Relay server with Supabase PostgreSQL.
+                \item Implemented SHA-256 proof replay protection, rate limiting, Row-Level Security, and a JavaScript SDK for QR-based passwordless verification.
             \end{highlights}
 
     \section{Skills}
